@@ -1,7 +1,7 @@
 //1768. Merge Strings Alternately
 
 import java.util.*;
-class Solution {
+class Problem01 {
     public String mergeAlternately(String word1, String word2) 
     {
         StringBuilder builder = new StringBuilder();
