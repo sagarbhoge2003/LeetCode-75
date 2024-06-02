@@ -1,33 +1,21 @@
 //1768. Merge Strings Alternately
 //https://leetcode.com/problems/merge-strings-alternately/?envType=study-plan-v2&envId=leetcode-75
-import java.util.*;
-class Problem01 {
-    public String mergeAlternately(String word1, String word2) 
-    {
-        StringBuilder builder = new StringBuilder();
+class Solution {
+    public String mergeAlternately(String word1, String word2) {
+        int m = word1.length();
+        int n = word2.length();
+        StringBuilder result = new StringBuilder();
+        int i = 0, j = 0;
 
-        int counter = 0;
-
-        while(counter< word1.length() && counter< word2.length())
-        {
-            builder.append(word1.charAt(counter));
-            builder.append(word2.charAt(counter));
-            counter++;
-        }
-
-        if(counter<word1.length()){
-            while(counter<word1.length()){
-                builder.append(word1.charAt(counter++));
+        while (i < m || j < n) {
+            if (i < m) {
+                result.append(word1.charAt(i++));
+            }
+            if (j < n) {
+                result.append(word2.charAt(j++));
             }
         }
 
-        else if(counter<word2.length()){
-            while(counter<word2.length()){
-                builder.append(word2.charAt(counter++));
-            }
-        }
-
-        return builder.toString();
-                
+        return result.toString();
     }
 }
